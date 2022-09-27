@@ -27,6 +27,42 @@ menu "I2C Encoders, decoders, sensors and other helper chips"
 
 comment "Audio decoders, processors and mixers"
 
+config VIDEO_VEYE327
+        tristate "VEYE327 camera sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	---help---
+	  This driver supports VEYE327 camera sensor from veye.cc
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called veye327.
+
+config VIDEO_CSIMX307
+        tristate "CSIMX307 camera sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	---help---
+	  This driver supports CSIMX307 camera sensor from veye.cc
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called csimx307.
+
+config VIDEO_CSSC132
+        tristate "CSSC132 camera sensor support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	help
+	  This driver supports CSSC132 camera sensor from veye.cc
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called cssc132.
+    
+config VIDEO_DS90UB954
+        tristate "fpd-linkIII  support"
+	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+	help
+	  This driver supports ds90ub954 and ds90ub953 from veye.cc
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called ds90ub954.
+
 config VIDEO_TVAUDIO
 	tristate "Simple audio decoder chips"
 	depends on VIDEO_V4L2 && I2C
@@ -771,51 +807,6 @@ config VIDEO_M52790
 	 To compile this driver as a module, choose M here: the
 	 module will be called m52790.
 
-config VIDEO_VEYE327
-        tristate "VEYE327 camera sensor support"
-	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-	---help---
-	  This driver supports VEYE327 camera sensor from veye.cc
-
-	  To compile this driver as a module, choose M here: the module
-	  will be called veye327.
-
-config VIDEO_CSIMX307
-        tristate "CSIMX307 camera sensor support"
-	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-	---help---
-	  This driver supports CSIMX307 camera sensor from veye.cc
-
-	  To compile this driver as a module, choose M here: the module
-	  will be called csimx307.
-
-config VIDEO_VEYEIMX335
-        tristate "VEYE imx335 camera sensor support"
-	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-	help
-	  This driver supports VIDEO_VEYEIMX335 camera sensor from veye.cc
-
-	  To compile this driver as a module, choose M here: the module
-	  will be called veye_imx335.
-
-config VIDEO_CSSC132
-        tristate "CSSC132 camera sensor support"
-	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-	help
-	  This driver supports CSSC132 camera sensor from veye.cc
-
-	  To compile this driver as a module, choose M here: the module
-	  will be called cssc132.
-    
-config VIDEO_DS90UB954
-        tristate "fpd-linkIII  support"
-	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-	help
-	  This driver supports ds90ub954 and ds90ub953 from veye.cc
-
-	  To compile this driver as a module, choose M here: the module
-	  will be called ds90ub954.
-	  	 
 endmenu
 
 menu "Sensors used on soc_camera driver"
